@@ -34,7 +34,7 @@
 #include <Awl/Task.hpp>
 #include <queue>
 
-namespace aw {
+namespace awl {
 	
 	/** @brief Defines a class for executing functions, methods or blocks on
 	 * the main thread
@@ -73,6 +73,6 @@ namespace aw {
 		bool m_run;
 	};
 	
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_WorkLoop_hpp

@@ -29,7 +29,7 @@
 #include <Awl/Task.hpp>
 #include <Awl/Debug.hpp>
 
-namespace aw {
+namespace awl {
 	
 	Task::Task(void) :
 	m_callback()
@@ -69,4 +69,4 @@ namespace aw {
 		m_callback();
 	}
 	
-} // namespace aw
+} // namespace awl

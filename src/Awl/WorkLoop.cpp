@@ -29,7 +29,7 @@
 #include <Awl/WorkLoop.hpp>
 #include <Awl/Lock.hpp>
 
-namespace aw {
+namespace awl {
 	
 	WorkLoop& WorkLoop::Default(void)
 	{
@@ -74,4 +74,4 @@ namespace aw {
 		
 	}
 	
-} // namespace aw
+} // namespace awl

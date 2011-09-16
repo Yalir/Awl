@@ -33,7 +33,7 @@
 #include <Awl/Types.hpp>
 #include <Awl/boost/shared_ptr.hpp>
 
-namespace aw {
+namespace awl {
 	
 	/** @file Task.hpp Awl/Task.hpp
 	 *
@@ -121,6 +121,6 @@ namespace aw {
 	 */
 	typedef boost::shared_ptr<Task> TaskRef;
 	
-} // namespace aw
+} // namespace awl
 
 #endif

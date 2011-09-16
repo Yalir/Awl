@@ -41,7 +41,7 @@
 #include <Awl/Unix/ThreadImpl.hpp>
 #endif
 
-namespace aw
+namespace awl
 {
 	
 	unsigned int Thread::GetCurrentThreadId(void)
@@ -95,4 +95,4 @@ namespace aw
 		myFunction->Run();
 	}
 	
-} // namespace aw
+} // namespace awl

@@ -105,7 +105,7 @@ private :
 };
 }
 
-namespace aw
+namespace awl
 {
 ////////////////////////////////////////////////////////////
 std::ostream& Err()
@@ -117,4 +117,4 @@ std::ostream& Err()
 }
 
 
-} // namespace aw
+} // namespace awl

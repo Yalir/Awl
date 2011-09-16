@@ -35,7 +35,7 @@
 #include <string>
 #include <iostream>
 
-namespace aw {
+namespace awl {
 	
 	////////////////////////////////////////////////////////////
 	Lock::Lock(Mutex& mutex) :
@@ -51,4 +51,4 @@ namespace aw {
 		myMutex.Unlock();
 	}
 	
-} // namespace aw
+} // namespace awl

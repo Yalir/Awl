@@ -34,7 +34,7 @@
 #include <Awl/Unix/ConditionImpl.hpp>
 #endif
 
-namespace aw {
+namespace awl {
 	const bool Condition::AutoUnlock = true;
 	const bool Condition::ManualUnlock = false;
 	
@@ -101,4 +101,4 @@ namespace aw {
 		m_impl->restore();
 	}
 	
-} // namespace aw
+} // namespace awl

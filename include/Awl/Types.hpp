@@ -32,12 +32,12 @@
 #include <Awl/boost/function.hpp>
 #include <Awl/boost/noncopyable.hpp>
 
-namespace aw {
+namespace awl {
 	
 	/** Defines a simple callback to a function defined as follow : void f(void)
 	 */
 	typedef boost::function <void (void)> Callback;
 
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_Types_hpp

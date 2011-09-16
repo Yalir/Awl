@@ -32,9 +32,9 @@
 #include <Awl/Mutex.hpp>
 #include <Awl/Lock.hpp>
 
-#define DISPLAY_THREAD_ID aw::priv::do_display_thread_id(__func__, __FILE__, __LINE__)
+#define DISPLAY_THREAD_ID awl::priv::do_display_thread_id(__func__, __FILE__, __LINE__)
 
-extern aw::Mutex __mt_cout_mutex;
+extern awl::Mutex __mt_cout_mutex;
 
 /** Thread-safe cout output
  *
@@ -43,7 +43,7 @@ extern aw::Mutex __mt_cout_mutex;
  * @endcode
  */
 #define MT_COUT(sequence) \
-{ aw::Lock l(__mt_cout_mutex); sequence; }
+{ awl::Lock l(__mt_cout_mutex); sequence; }
 
 #ifndef NDEBUG
 #define MT_DEBUG_COUT(sequence) MT_COUT(sequence)
@@ -53,12 +53,12 @@ extern aw::Mutex __mt_cout_mutex;
 
 
 
-namespace aw {
+namespace awl {
 	namespace priv {
 		
 		void do_display_thread_id(const char *function, const char *file, unsigned int line);
 		
 	} // namespace priv
-} // namespace aw
+} // namespace awl
 
 #endif

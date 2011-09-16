@@ -44,7 +44,7 @@
  * @param function The function or static method to call
  * @return The Task object associated to that call
  */
-#define AwlAsyncCall(function) aw::AsyncCall(boost::bind(function))
+#define AwlAsyncCall(function) awl::AsyncCall(boost::bind(function))
 
 /** @brief Call the given @a method in an asynchronous way
  *
@@ -52,7 +52,7 @@
  * @param object The object targetted by the @a method
  * @return The Task object associated to that call
  */
-#define AwlAsyncMethod(method, object) aw::AsyncCall(boost::bind(method, object))
+#define AwlAsyncMethod(method, object) awl::AsyncCall(boost::bind(method, object))
 
 /** @brief Start a block that is to be executed in an asynchronous way.
  * You have to close the block with AwlCloseAsyncBlock
@@ -70,9 +70,9 @@
 /** @brief See AwlAsyncBlock
  * @see AwlAsyncBlock
  */
-#define AwlCloseAsyncBlock }; aw::AsyncCall(boost::bind(__awl_local_struct::__awl_async_block)); }
+#define AwlCloseAsyncBlock }; awl::AsyncCall(boost::bind(__awl_local_struct::__awl_async_block)); }
 
-namespace aw {
+namespace awl {
 	
 	/** @brief Call the given callback in an asynchronous way
 	 * and get a handle on this task
@@ -82,6 +82,6 @@ namespace aw {
 	 */
 	TaskRef Awl_Api AsyncCall(Callback f);
 	
-} // namespace aw
+} // namespace awl
 
 #endif

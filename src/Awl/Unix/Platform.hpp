@@ -40,7 +40,7 @@
 #include <sys/time.h>
 
 
-namespace aw
+namespace awl
 {
 namespace priv
 {
@@ -71,7 +71,7 @@ public :
 	
 } // namespace priv
 
-} // namespace aw
+} // namespace awl
 
 
 #endif // Awl_PlatformUnix_hpp

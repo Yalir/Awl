@@ -31,7 +31,7 @@
 	
 #include <Awl/Unix/ThreadImpl.hpp>
 
-namespace aw {
+namespace awl {
 	namespace priv {
 
 unsigned int ThreadImpl::CurrentThreadId(void)
@@ -85,4 +85,4 @@ void* ThreadImpl::EntryPoint(void* userData)
 }
 		
 	} // namespace priv
-} // namespace aw
+} // namespace awl

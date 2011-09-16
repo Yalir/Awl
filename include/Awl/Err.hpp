@@ -39,7 +39,7 @@
 #include <ostream>
 
 
-namespace aw
+namespace awl
 {
 ////////////////////////////////////////////////////////////
 /// \brief Standard stream used by SFML to output warnings and errors

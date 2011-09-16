@@ -38,7 +38,7 @@
 #include <Awl/boost/noncopyable.hpp>
 #include <Awl/Config.hpp>
 
-namespace aw
+namespace awl
 {
 namespace priv
 {
@@ -94,14 +94,14 @@ private :
     priv::MutexImpl* myMutexImpl; ///< OS-specific implementation
 };
 
-} // namespace aw
+} // namespace awl
 
 
 #endif // Awl_Mutex_hpp
 
 
 ////////////////////////////////////////////////////////////
-/// \class aw::Mutex
+/// \class awl::Mutex
 /// \ingroup system
 ///
 /// Mutex stands for "MUTual EXclusion". A mutex is a
@@ -117,7 +117,7 @@ private :
 /// Usage example:
 /// \code
 /// Database database; // this is a critical resource that needs some protection
-/// aw::Mutex mutex;
+/// awl::Mutex mutex;
 ///
 /// void thread1()
 /// {
@@ -140,7 +140,7 @@ private :
 ///
 /// To make the usage of mutexes more robust, particularly in
 /// environments where exceptions can be thrown, you should
-/// use the helper class aw::Lock to lock/unlock mutexes.
+/// use the helper class awl::Lock to lock/unlock mutexes.
 ///
 /// SFML mutexes are recursive, which means that you can lock
 /// a mutex multiple times in the same thread without creating
@@ -149,6 +149,6 @@ private :
 /// However, you must call Unlock() exactly as many times as you
 /// called Lock(). If you don't, the mutex won't be released.
 ///
-/// \see aw::Lock
+/// \see awl::Lock
 ///
 ////////////////////////////////////////////////////////////

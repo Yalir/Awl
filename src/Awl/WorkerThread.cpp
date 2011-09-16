@@ -35,11 +35,11 @@
 #include <Awl/Debug.hpp>
 #include <map>
 
-namespace aw {
+namespace awl {
 	
 	static std::map<Uint64, Uint64> g_thread_table;
 	static unsigned int g_thread_counter = 0;
-	static aw::Mutex g_thread_table_mutex;
+	static awl::Mutex g_thread_table_mutex;
 	
 	WorkerThread::WorkerThread() :
 	m_thread(&WorkerThread::ThreadCallback, this)
@@ -87,5 +87,5 @@ namespace aw {
 		return res;
 	}
 	
-} // namespace aw
+} // namespace awl
 

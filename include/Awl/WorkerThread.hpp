@@ -32,7 +32,7 @@
 #include <Awl/Config.hpp>
 #include <Awl/Thread.hpp>
 
-namespace aw {
+namespace awl {
 	
 	/** @file WorkerThread.hpp Awl/WorkerThread.hpp
 	 */
@@ -65,6 +65,6 @@ namespace aw {
 		Thread m_thread;
 	};
 	
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_WorkerThread_hpp

@@ -38,7 +38,7 @@
 #include <Awl/boost/noncopyable.hpp>
 #include <Awl/Mutex.hpp>
 
-namespace aw
+namespace awl
 {
 	////////////////////////////////////////////////////////////
 	/// \file Lock.hpp Awl/Lock.hpp
@@ -52,7 +52,7 @@ namespace aw
 		////////////////////////////////////////////////////////////
 		/// \brief Construct the lock with a target mutex
 		///
-		/// The mutex passed to aw::Lock is automatically locked.
+		/// The mutex passed to awl::Lock is automatically locked.
 		///
 		/// \param mutex Mutex to lock
 		///
@@ -62,7 +62,7 @@ namespace aw
 		////////////////////////////////////////////////////////////
 		/// \brief Destructor
 		///
-		/// The destructor of aw::Lock automatically unlocks its mutex.
+		/// The destructor of awl::Lock automatically unlocks its mutex.
 		///
 		////////////////////////////////////////////////////////////
 		~Lock();
@@ -75,17 +75,17 @@ namespace aw
 		Mutex& myMutex; ///< Mutex to lock / unlock
 	};
 	
-} // namespace aw
+} // namespace awl
 
 
 #endif // Awl_Lock_hpp
 
 
 ////////////////////////////////////////////////////////////
-/// \class aw::Lock
+/// \class awl::Lock
 /// \ingroup system
 ///
-/// aw::Lock is a RAII wrapper for aw::Mutex. By unlocking
+/// awl::Lock is a RAII wrapper for awl::Mutex. By unlocking
 /// it in its destructor, it ensures that the mutex will
 /// always be released when the current scope (most likely
 /// a function) ends.
@@ -93,16 +93,16 @@ namespace aw
 /// return statement can interrupt the execution flow of the
 /// function.
 ///
-/// For maximum robustness, aw::Lock should always be used
+/// For maximum robustness, awl::Lock should always be used
 /// to lock/unlock a mutex.
 ///
 /// Usage example:
 /// \code
-/// aw::Mutex mutex;
+/// awl::Mutex mutex;
 /// 
 /// void function()
 /// {
-///     aw::Lock lock(mutex); // mutex is now locked
+///     awl::Lock lock(mutex); // mutex is now locked
 /// 
 ///     functionThatMayThrowAnException(); // mutex is unlocked if this function throws
 /// 
@@ -120,12 +120,12 @@ namespace aw
 /// part of the code.
 ///
 /// \code
-/// aw::Mutex mutex;
+/// awl::Mutex mutex;
 /// 
 /// void function()
 /// {
 ///     {
-///       aw::Lock lock(mutex);
+///       awl::Lock lock(mutex);
 ///       codeThatRequiresProtection();
 /// 
 ///     } // mutex is unlocked here
@@ -139,6 +139,6 @@ namespace aw
 /// a mutex is locked, other threads may be waiting doing nothing
 /// until it is released.
 ///
-/// \see aw::Mutex
+/// \see awl::Mutex
 ///
 ////////////////////////////////////////////////////////////

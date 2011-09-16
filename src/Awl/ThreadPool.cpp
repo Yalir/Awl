@@ -32,7 +32,7 @@
 #include <Awl/Lock.hpp>
 #include <Awl/Debug.hpp>
 
-namespace aw {
+namespace awl {
 
 #define THREAD_COUNT 10
 	
@@ -75,10 +75,10 @@ namespace aw {
 	
 	void ThreadPool::Init(void)
 	{
-		static aw::Mutex initMutex;
+		static awl::Mutex initMutex;
 		static bool initialized = false;
 		
-		aw::Lock l(initMutex);
+		awl::Lock l(initMutex);
 		if (!initialized)
 		{
 			for (int i = 0; i < THREAD_COUNT;i++)
@@ -111,4 +111,4 @@ namespace aw {
 		return (m_pendingTasks.empty() == false);
 	}
 
-} // namespace aw
+} // namespace awl

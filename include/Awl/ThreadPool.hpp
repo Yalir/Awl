@@ -34,7 +34,7 @@
 #include <Awl/Condition.hpp>
 #include <Awl/Task.hpp>
 
-namespace aw {
+namespace awl {
 	
 	/** @file ThreadPool.hpp Awl/ThreadPool.hpp
 	 */
@@ -70,6 +70,6 @@ namespace aw {
 		std::set<WorkerThread *> m_threads;
 	};
 	
-} // namespace aw
+} // namespace awl
 
 #endif

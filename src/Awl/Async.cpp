@@ -28,7 +28,7 @@
 
 #include <Awl/Async.hpp>
 
-namespace aw {
+namespace awl {
 	
 	TaskRef AsyncCall(Callback f)
 	{

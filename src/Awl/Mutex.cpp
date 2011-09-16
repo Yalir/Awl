@@ -41,7 +41,7 @@
 
 #endif
 
-namespace aw {
+namespace awl {
 	
 	////////////////////////////////////////////////////////////
 	Mutex::Mutex()
@@ -70,4 +70,4 @@ namespace aw {
 		myMutexImpl->Unlock();
 	}
 	
-} // namespace aw
+} // namespace awl

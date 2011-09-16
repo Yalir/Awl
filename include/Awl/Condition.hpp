@@ -31,7 +31,7 @@
 
 #include <Awl/Config.hpp>
 
-namespace aw {
+namespace awl {
 	
 	namespace priv {
 		class ConditionImpl;
@@ -142,7 +142,7 @@ namespace aw {
 		priv::ConditionImpl *m_impl;
 	};
 	
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_Condition_hpp
 

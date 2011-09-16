@@ -31,7 +31,7 @@
 
 #include <Awl/Unix/Platform.hpp>
 
-namespace aw {
+namespace awl {
 	namespace priv {
 		
 		////////////////////////////////////////////////////////////
@@ -51,4 +51,4 @@ namespace aw {
 		}
 		
 	} // namespace priv	
-} // namespace aw
+} // namespace awl

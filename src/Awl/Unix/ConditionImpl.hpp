@@ -31,7 +31,7 @@
 #define Awl_ConditionImpl_hpp
 
 #include <pthread.h>
-namespace aw {
+namespace awl {
 	namespace priv {
 		
 		class ConditionImpl {
@@ -56,6 +56,6 @@ namespace aw {
 		};
 		
 	} // namespace priv
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_ConditionImpl_hpp

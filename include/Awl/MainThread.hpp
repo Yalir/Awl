@@ -43,7 +43,7 @@
  * @param function The function or static method to call
  * @return The Task object associated to that call
  */
-#define AwlMainThreadCall(function) aw::MainThreadCall(boost::bind(function))
+#define AwlMainThreadCall(function) awl::MainThreadCall(boost::bind(function))
 
 /** @brief Call the given @a method on the main thread
  *
@@ -51,7 +51,7 @@
  * @param object The object targetted by the @a method
  * @return The Task object associated to that call
  */
-#define AwlMainThreadMethod(method, object) aw::MainThreadCall(boost::bind(method, object))
+#define AwlMainThreadMethod(method, object) awl::MainThreadCall(boost::bind(method, object))
 
 /** @brief Start a block that is to be executed on the main thread.
  * You have to close the block with AwlCloseMainThreadBlock
@@ -69,9 +69,9 @@
 /** @brief See AwlMainThreadBlock
  * @see AwlMainThreadBlock
  */
-#define AwlCloseMainThreadBlock }; aw::MainThreadCall(boost::bind(__awl_local_struct::__awl_main_thread_block)); }
+#define AwlCloseMainThreadBlock }; awl::MainThreadCall(boost::bind(__awl_local_struct::__awl_main_thread_block)); }
 
-namespace aw {
+namespace awl {
 	
 	/** @brief Call the given callback on the main thread
 	 * and get a handle on this task
@@ -81,7 +81,7 @@ namespace aw {
 	 */
 	TaskRef Awl_Api MainThreadCall(Callback f);
 	
-} // namespace aw
+} // namespace awl
 
 #endif
 

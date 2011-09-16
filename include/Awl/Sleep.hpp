@@ -34,13 +34,13 @@
 
 #include <Awl/Config.hpp>
 
-namespace aw
+namespace awl
 {
 	////////////////////////////////////////////////////////////
 	/// \ingroup system
 	/// \brief Make the current thread sleep for a given duration
 	///
-	/// aw::Sleep is the best way to block a program or one of its
+	/// awl::Sleep is the best way to block a program or one of its
 	/// threads, as it doesn't consume any CPU power.
 	///
 	/// \param duration Time to sleep, in milliseconds
@@ -48,7 +48,7 @@ namespace aw
 	////////////////////////////////////////////////////////////
 	void Awl_Api Sleep(Uint32 duration);
 	
-} // namespace aw
+} // namespace awl
 
 
 #endif // Awl_Sleep_hpp

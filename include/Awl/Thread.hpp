@@ -40,7 +40,7 @@
 #include <cstdlib>
 
 
-namespace aw
+namespace awl
 {
 namespace priv
 {
@@ -56,7 +56,9 @@ class Awl_Api Thread : boost::noncopyable
 {
 public :
 
-	
+	/** @brief Returns the OS-specific thread identifier
+	 * @return The OS-specific thread identifier
+	 */
 	static unsigned int GetCurrentThreadId(void);
 	
     ////////////////////////////////////////////////////////////
@@ -139,7 +141,7 @@ public :
     /// \brief Destructor
     ///
     /// This destructor calls Wait(), so that the internal thread
-    /// cannot survive after its aw::Thread instance is destroyed.
+    /// cannot survive after its awl::Thread instance is destroyed.
     ///
     ////////////////////////////////////////////////////////////
     ~Thread();
@@ -202,13 +204,13 @@ private :
 
 #include <Awl/Thread.inl>
 	
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_Thread_hpp
 
 
 ////////////////////////////////////////////////////////////
-/// \class aw::Thread
+/// \class awl::Thread
 /// \ingroup system
 ///
 /// Threads provide a way to run multiple parts of the code
@@ -216,9 +218,9 @@ private :
 /// is split and both the new thread and the caller run
 /// in parallel.
 ///
-/// To use a aw::Thread, you construct it directly with the
+/// To use a awl::Thread, you construct it directly with the
 /// function to execute as the entry point of the thread.
-/// aw::Thread has multiple template constructors, which means
+/// awl::Thread has multiple template constructors, which means
 /// that you can use several types of entry points:
 /// \li non-member functions with no argument
 /// \li non-member functions with one argument of any type
@@ -226,14 +228,14 @@ private :
 /// \li functors with one argument of any type
 /// \li member functions from any class with no argument
 ///
-/// The function argument, if any, is copied in the aw::Thread
+/// The function argument, if any, is copied in the awl::Thread
 /// instance, as well as the functor (if the corresponding
 /// constructor is used). Class instances, however, are passed
 /// by pointer to you must make sure that the object won't be
 /// destroyed while the thread is still using it.
 ///
 /// The thread ends when its function is terminated. If the
-/// owner aw::Thread instance is destroyed before the
+/// owner awl::Thread instance is destroyed before the
 /// thread is finished, the destructor will wait (see Wait())
 ///
 /// Usage examples:
@@ -245,7 +247,7 @@ private :
 ///     ...
 /// }
 ///
-/// aw::Thread thread(&ThreadFunc, 5);
+/// awl::Thread thread(&ThreadFunc, 5);
 /// thread.Launch(); // start the thread (internally calls ThreadFunc(5))
 /// \endcode
 ///
@@ -262,7 +264,7 @@ private :
 /// };
 ///
 /// Task task;
-/// aw::Thread thread(&Task::Run, &task);
+/// awl::Thread thread(&Task::Run, &task);
 /// thread.Launch(); // start the thread (internally calls task.run())
 /// \endcode
 ///
@@ -277,7 +279,7 @@ private :
 ///     }
 /// };
 ///
-/// aw::Thread thread(Task());
+/// awl::Thread thread(Task());
 /// thread.Launch(); // start the thread (internally calls operator() on the Task instance)
 /// \endcode
 ///
@@ -285,8 +287,8 @@ private :
 /// all threads inside the same process share the same memory space,
 /// which means that you may end up accessing the same variable
 /// from multiple threads at the same time. To prevent this
-/// kind of situations, you can use mutexes (see aw::Mutex).
+/// kind of situations, you can use mutexes (see awl::Mutex).
 ///
-/// \see aw::Mutex
+/// \see awl::Mutex
 ///
 ////////////////////////////////////////////////////////////

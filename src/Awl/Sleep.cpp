@@ -32,7 +32,7 @@
 #include <Awl/Sleep.hpp>
 #include <Awl/Platform.hpp>
 
-namespace aw {
+namespace awl {
 	
 	////////////////////////////////////////////////////////////
 	void Sleep(Uint32 duration)
@@ -40,4 +40,4 @@ namespace aw {
 		priv::Platform::Sleep(duration);
 	}
 	
-} // namespace aw
+} // namespace awl

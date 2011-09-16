@@ -29,7 +29,7 @@
 #include <Awl/MainThread.hpp>
 #include <Awl/WorkLoop.hpp>
 
-namespace aw {
+namespace awl {
 	
 	TaskRef MainThreadCall(Callback f)
 	{
@@ -38,4 +38,4 @@ namespace aw {
 		return t;
 	}
 
-} // namespace aw
+} // namespace awl

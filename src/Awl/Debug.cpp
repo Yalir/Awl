@@ -33,9 +33,9 @@
 #include <string>
 #include <iostream>
 
-aw::Mutex __mt_cout_mutex;
+awl::Mutex __mt_cout_mutex;
 	
-namespace aw {
+namespace awl {
 	
 	namespace priv {
 		
@@ -66,4 +66,4 @@ namespace aw {
 			
 		}
 	} // namespace priv
-} // namespace aw
+} // namespace awl

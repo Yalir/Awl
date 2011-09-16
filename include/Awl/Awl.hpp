@@ -29,7 +29,7 @@
 #ifndef Awl_Awl_hpp
 #define Awl_Awl_hpp
 
-/** @namespace aw
+/** @namespace awl
  * @brief Contains all of the classes, functions, types and definitions of the Awl
  * library
  */
@@ -46,9 +46,10 @@
 #include <Awl/Thread.hpp>
 
 // Real Awl interesting stuff
-#include <Awl/Task.hpp>
 #include <Awl/Async.hpp>
 #include <Awl/MainThread.hpp>
+#include <Awl/Task.hpp>
+#include <Awl/Async.hpp>
 #include <Awl/WorkLoop.hpp>
 
 #endif

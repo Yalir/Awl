@@ -138,7 +138,7 @@
 ////////////////////////////////////////////////////////////
 // Define portable fixed-size types
 ////////////////////////////////////////////////////////////
-namespace aw
+namespace awl
 {
     // All "common" platforms use the same size for char, short and int
     // (basically there are 3 types for 3 sizes, so no other match is possible),
@@ -165,7 +165,7 @@ namespace aw
         typedef unsigned long long Uint64;
     #endif
 
-} // namespace aw
+} // namespace awl
 
 
 #endif // Awl_Config_hpp

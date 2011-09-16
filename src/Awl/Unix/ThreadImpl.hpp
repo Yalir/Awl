@@ -41,7 +41,7 @@
 #include <cassert>
 #include <Awl/Thread.hpp>
 
-namespace aw {
+namespace awl {
 namespace priv
 {
 ////////////////////////////////////////////////////////////
@@ -93,7 +93,7 @@ private :
 };
 	
 } // namespace priv
-} // namespace aw
+} // namespace awl
 
 
 #endif // Awl_ThreadImpl_hpp
