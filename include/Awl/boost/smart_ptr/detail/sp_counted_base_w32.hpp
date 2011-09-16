@@ -24,9 +24,9 @@
 //  formulation
 //
 
-#include <boost/detail/interlocked.hpp>
-#include <boost/detail/workaround.hpp>
-#include <boost/detail/sp_typeinfo.hpp>
+#include <Awl/boost/detail/interlocked.hpp>
+#include <Awl/boost/detail/workaround.hpp>
+#include <Awl/boost/detail/sp_typeinfo.hpp>
 
 namespace boost
 {

@@ -39,7 +39,7 @@ namespace aw {
 	/** @brief Defines a class for executing functions, methods or blocks on
 	 * the main thread
 	 */
-	class WorkLoop : boost::noncopyable {
+	class Awl_Api WorkLoop : boost::noncopyable {
 	public:
 		/** @brief Return the default WorkLoop instance
 		 * 

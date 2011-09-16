@@ -79,7 +79,7 @@ namespace aw {
 	 * @param f the function or method that represents the task
 	 * @return The associated Task object
 	 */
-	TaskRef MainThreadCall(Callback f);
+	TaskRef Awl_Api MainThreadCall(Callback f);
 	
 } // namespace aw
 

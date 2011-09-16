@@ -39,7 +39,7 @@ namespace aw {
 	
 	/** @brief Defines a classical Condition class
 	 */
-	class Condition {
+	class Awl_Api Condition {
 	public:
 		/** Constant for arg 2 of WaitAndLock()
 		 */

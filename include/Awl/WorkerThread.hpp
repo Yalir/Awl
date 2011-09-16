@@ -40,7 +40,7 @@ namespace aw {
 	/** @brief Defines a thread that will grab the tasks from the ThreadPool
 	 * and execute it asynchronously.
 	 */
-	class WorkerThread {
+	class Awl_Api WorkerThread {
 		friend class ThreadPool;
 	public:
 		

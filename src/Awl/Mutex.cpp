@@ -31,7 +31,7 @@
 
 #include <Awl/Mutex.hpp>
 
-#if defined(Awl_SYSTEM_WINDOWS)
+#ifdef Awl_SystemWindows
 
 #include <Awl/Win32/MutexImpl.hpp>
 

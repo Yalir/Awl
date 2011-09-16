@@ -30,13 +30,15 @@
  */
 
 #include <Awl/Win32/ThreadImpl.hpp>
+#include <iostream>
+#include <Awl/Err.hpp>
 
 namespace aw {
 	namespace priv {
 		
-		unsigned int ThreadImpl::GetCurrentThreadId(void)
+		unsigned int ThreadImpl::CurrentThreadId(void)
 		{
-			return (unsigned int)GetCurrentThreadId(void);
+			return (unsigned int)GetCurrentThreadId();
 		}
 		
 		////////////////////////////////////////////////////////////

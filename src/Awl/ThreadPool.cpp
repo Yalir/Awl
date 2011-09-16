@@ -34,7 +34,7 @@
 
 namespace aw {
 
-#define THREAD_COUNT 3
+#define THREAD_COUNT 10
 	
 	ThreadPool& ThreadPool::Default()
 	{

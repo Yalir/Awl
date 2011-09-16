@@ -66,6 +66,11 @@ namespace aw {
 				return false;
 			}
 		}
+
+		void ConditionImpl::lock(void)
+		{
+			m_mutex.Lock();
+		}
 		
 		void ConditionImpl::release(int value)
 		{

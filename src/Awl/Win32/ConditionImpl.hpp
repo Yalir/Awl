@@ -41,6 +41,7 @@ namespace aw {
 		ConditionImpl(int var);
 		~ConditionImpl(void);
 		bool waitAndRetain(int value);
+		void lock(void);
 		void release(int value);
 		void setValue(int value);
 		int value(void) const;

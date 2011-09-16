@@ -42,7 +42,7 @@ namespace aw {
 	/** @brief Defines a manager for the different threads that will execute
 	 * the asynchronous Tasks.
 	 */
-	class ThreadPool {
+	class Awl_Api ThreadPool {
 		friend class WorkerThread;
 	public:
 		/** Returns the ThreadPool instance

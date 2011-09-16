@@ -37,9 +37,10 @@
 ////////////////////////////////////////////////////////////
 #include <Awl/boost/noncopyable.hpp>
 #include <Awl/Thread.hpp>
-#include <Awl/Err.hpp>
+//#include <Awl/Err.hpp>
 #include <cassert>
 #include <process.h>
+#include <Windows.h>
 
 namespace aw
 {
@@ -53,6 +54,8 @@ namespace priv
 class ThreadImpl : boost::noncopyable
 {
 public :
+
+	static unsigned int CurrentThreadId(void);
 
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor, launch the thread

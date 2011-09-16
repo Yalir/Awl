@@ -80,7 +80,7 @@ namespace aw {
 	 * @param f the function or method that represents the task
 	 * @return The associated Task object
 	 */
-	TaskRef AsyncCall(Callback f);
+	TaskRef Awl_Api AsyncCall(Callback f);
 	
 } // namespace aw
 
