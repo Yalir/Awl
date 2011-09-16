@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Awl", "Awl.vcxproj", "{F8266E9B-4461-48FF-896D-2EE8D80A8D7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8266E9B-4461-48FF-896D-2EE8D80A8D7E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F8266E9B-4461-48FF-896D-2EE8D80A8D7E}.Debug|Win32.Build.0 = Debug|Win32
+		{F8266E9B-4461-48FF-896D-2EE8D80A8D7E}.Release|Win32.ActiveCfg = Release|Win32
+		{F8266E9B-4461-48FF-896D-2EE8D80A8D7E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
