@@ -66,10 +66,19 @@
  */
 #define AwlMainThreadBlock { struct __awl_local_struct { static void __awl_main_thread_block(void)
 
-/** @brief See AwlMainThreadBlock
+/** @brief Close a block that should be executed on the main thread, without
+ * waiting for its completion
+ *
  * @see AwlMainThreadBlock
  */
-#define AwlCloseMainThreadBlock }; awl::MainThreadCall(boost::bind(__awl_local_struct::__awl_main_thread_block)); }
+#define AwlCloseAsyncMainThreadBlock }; awl::MainThreadCall(boost::bind(__awl_local_struct::__awl_main_thread_block)); }
+
+/** @brief Close a block that should be executed on the main thread,
+ * and wait for its completion
+ *
+ * @see AwlMainThreadBlock
+ */
+#define AwlCloseMainThreadBlock }; awl::TaskRef __awl_task = awl::MainThreadCall(boost::bind(__awl_local_struct::__awl_main_thread_block)); __awl_task->Wait(); }
 
 namespace awl {
 	
