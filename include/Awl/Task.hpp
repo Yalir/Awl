@@ -31,7 +31,9 @@
 
 #include <Awl/Config.hpp>
 #include <Awl/Types.hpp>
+#include <Awl/Condition.hpp>
 #include <Awl/boost/shared_ptr.hpp>
+#include <Awl/boost/noncopyable.hpp>
 
 namespace awl {
 	
@@ -50,7 +52,7 @@ namespace awl {
 	/** @brief Task is mainly defined by a callback function and allows
 	 * asynchronous or synchronous execution, cancellation and abort.
 	 */
-	class Awl_Api Task {
+	class Awl_Api Task : boost::noncopyable {
 		friend class WorkerThread;
 		friend class WorkLoop;
 	public:
@@ -110,10 +112,28 @@ namespace awl {
 		 */
 		bool IsCancelled(void) const;
 		
+		/** @brief Wait until the task is over
+		 *
+		 * @details If the Task is to be executed on another thread, this
+		 * will block the current thread and its execution flow until
+		 * the Task has been completed.
+		 * If the Task is to be executed on the same thread, this call has
+		 * no synchronization effect and will return false.
+		 *
+		 * @return true is the Task has been performed on another thread, false
+		 * otherwise (also meaning the Task may not have been performed)
+		 */
+		bool Wait(void);
+		
 	private:
 		void Execute(WorkerThread& owner);
 		void Execute(void); // from work loop
+		
 		Callback m_callback;
+		bool m_isCancelled;
+		WorkerThread *m_owner;
+		Uint64 m_threadId;
+		Condition m_taskDone;
 	};
 	
 	/** Defines an automatically released and shared

@@ -28,17 +28,27 @@
 
 #include <Awl/Task.hpp>
 #include <Awl/Debug.hpp>
+#include <Awl/Thread.hpp>
+#include <Awl/ThreadPool.hpp>
 
 namespace awl {
 	
 	Task::Task(void) :
-	m_callback()
+	m_callback(),
+	m_isCancelled(false),
+	m_owner(NULL),
+	m_threadId(-1),
+	m_taskDone()
 	{
 		
 	}
 	
 	Task::Task(Callback f) :
-	m_callback(f)
+	m_callback(f),
+	m_isCancelled(false),
+	m_owner(NULL),
+	m_threadId(-1),
+	m_taskDone()
 	{
 		
 	}
@@ -50,23 +60,53 @@ namespace awl {
 	
 	void Task::Cancel(void)
 	{
-		
+		m_isCancelled = true;
 	}
 	
 	void Task::Abort(void)
 	{
+		Cancel();
 		
+		if (m_owner)
+		{
+			ThreadPool::Default().KillWorkerThread(m_owner);
+		}
+	}
+	
+	bool Task::IsCancelled(void) const
+	{
+		return m_isCancelled;
+	}
+	
+	bool Task::Wait(void)
+	{
+		if (m_threadId == Thread::GetCurrentThreadId())
+		{
+			MT_DEBUG_COUT(std::cout << "trying to wait on same thread" << std::endl);
+			return false;
+		}
+		else
+		{
+			m_taskDone.WaitAndLock(1, Condition::AutoUnlock);
+			return true;
+		}
 	}
 	
 	void Task::Execute(WorkerThread& owner)
 	{
-		//DISPLAY_THREAD_ID;
+		// Save the worker thread from which we're executing the task
+		m_owner = &owner;
 		Execute();
 	}
 	
 	void Task::Execute(void)
 	{
-		m_callback();
+		m_threadId = Thread::GetCurrentThreadId();
+		
+		if (!m_isCancelled)
+			m_callback();
+		
+		m_taskDone = 1;
 	}
 	
 } // namespace awl
