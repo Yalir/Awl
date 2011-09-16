@@ -1,0 +1,14 @@
+Authors
+===================
+
+Awl is mostly written by Lucas Soltic (aka Ceylo) but some files
+were directly imported from SFML (http://www.sfml-dev.org/), with some additions,
+and are thereby mostly the work of Laurent Gomila:
+- Config
+- Lock
+- Mutex
+- Platform
+- Sleep
+- Thread
+
+Awl also includes a subset of Boost (http://www.boost.org/) in include/Awl/boost. These files were modified to fit the <Awl/...> include scheme.
