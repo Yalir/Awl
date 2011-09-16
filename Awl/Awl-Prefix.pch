@@ -1,6 +1,0 @@
-//
-// Prefix header for all source files of the 'Awl' target in the 'Awl' project
-//
-
-#include <iostream>
-
