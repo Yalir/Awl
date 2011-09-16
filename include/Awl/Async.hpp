@@ -72,6 +72,8 @@
  */
 #define AwlCloseAsyncBlock }; awl::AsyncCall(boost::bind(__awl_local_struct::__awl_async_block)); }
 
+#define AwlCloseAsyncControlledBlock(taskRef) }; taskRef = awl::AsyncCall(boost::bind(__awl_local_struct::__awl_async_block)); }
+
 namespace awl {
 	
 	/** @brief Call the given callback in an asynchronous way
