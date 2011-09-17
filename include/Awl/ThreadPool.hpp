@@ -39,11 +39,14 @@ namespace awl {
 	/** @file ThreadPool.hpp Awl/ThreadPool.hpp
 	 */
 	
+	class ThreadPoolConstructor;
+	
 	/** @brief Defines a manager for the different threads that will execute
 	 * the asynchronous Tasks.
 	 */
 	class Awl_Api ThreadPool {
 		friend class WorkerThread;
+		friend class ThreadPoolConstructor;
 	public:
 		/** Returns the ThreadPool instance
 		 *
@@ -57,9 +60,12 @@ namespace awl {
 		 */
 		void ScheduleTaskForExecution(TaskRef t);
 		
-	private:
-		ThreadPool(void);
+		void KillWorkerThread(WorkerThread *worker);
+		
+		// Not to be used but public for private convenience
+		ThreadPool(int, int , int);
 		~ThreadPool(void);
+	private:
 		void Init(void);
 		
 		bool HasPendingTask_unprotected(void);

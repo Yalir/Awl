@@ -31,14 +31,18 @@
 #include <Awl/Mutex.hpp>
 #include <Awl/Lock.hpp>
 #include <Awl/Debug.hpp>
+#include <Awl/Thread.hpp>
 
 namespace awl {
 
+	namespace {
+		ThreadPool shared(1, 1, 1);
+	}
+	
 #define THREAD_COUNT 10
 	
 	ThreadPool& ThreadPool::Default()
 	{
-		static ThreadPool shared;
 		shared.Init();
 		return shared;
 	}
@@ -47,9 +51,19 @@ namespace awl {
 	{
 		m_hasPendingTask.Lock();
 		m_pendingTasks.push(t);
-		MT_DEBUG_COUT(std::cout << "+ queue size = " << m_pendingTasks.size() << std::endl);
 		m_hasPendingTask.Unlock(1);
 		//m_hasPendingTask = 1;
+	}
+	
+	void ThreadPool::KillWorkerThread(WorkerThread *worker)
+	{
+		std::set<WorkerThread *>::iterator it = m_threads.find(worker);
+		
+		if (it != m_threads.end())
+		{
+			(*it)->Die();
+			m_threads.insert(m_threads.end(), new WorkerThread());
+		}
 	}
 	
 	bool ThreadPool::WaitForTask(TaskRef& t)
@@ -60,7 +74,6 @@ namespace awl {
 		{
 			t = m_pendingTasks.front();
 			m_pendingTasks.pop();
-			MT_DEBUG_COUT(std::cout << "- queue size = " << m_pendingTasks.size() << std::endl);
 			m_hasPendingTask.Unlock(HasPendingTask_unprotected());
 		}
 		
@@ -68,9 +81,9 @@ namespace awl {
 	}
 
 	
-	ThreadPool::ThreadPool()
+	ThreadPool::ThreadPool(int, int, int)
 	{
-		
+		Thread::RegisterMainThread();
 	}
 	
 	void ThreadPool::Init(void)
