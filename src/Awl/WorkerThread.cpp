@@ -50,7 +50,6 @@ namespace awl {
 	WorkerThread::~WorkerThread()
 	{
 		m_thread.Wait();
-		MT_DEBUG_COUT(std::cout << "thread terminated" << std::endl);
 	}
 	
 	void WorkerThread::ThreadCallback(void)
@@ -68,6 +67,11 @@ namespace awl {
 			// Ease thread switching for some OS
 			Sleep(0);
 		}
+	}
+	
+	void WorkerThread::Die(void)
+	{
+		m_thread.Terminate();
 	}
 	
 	

@@ -61,6 +61,7 @@ namespace awl {
 		WorkerThread();
 		~WorkerThread();
 		void ThreadCallback(void);
+		void Die(void);
 		
 		Thread m_thread;
 	};
