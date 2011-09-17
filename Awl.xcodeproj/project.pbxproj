@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87496A281423DC5C00D6E613 /* Err.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87496A271423DC5C00D6E613 /* Err.cpp */; };
+		87496A2B1423DC6B00D6E613 /* Err.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87496A2A1423DC6B00D6E613 /* Err.hpp */; };
 		874D20AD1417D81000262A4E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 874D20AC1417D81000262A4E /* main.cpp */; };
 		87A9B046141E54B30000BBA3 /* Async.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9A91F141E54B10000BBA3 /* Async.hpp */; };
 		87A9B047141E54B30000BBA3 /* Awl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9A920141E54B10000BBA3 /* Awl.hpp */; };
@@ -1764,6 +1766,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		87496A271423DC5C00D6E613 /* Err.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Err.cpp; sourceTree = "<group>"; };
+		87496A2A1423DC6B00D6E613 /* Err.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Err.hpp; sourceTree = "<group>"; };
 		874D20A91417D81000262A4E /* awl_sfml_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = awl_sfml_test; sourceTree = BUILT_PRODUCTS_DIR; };
 		874D20AC1417D81000262A4E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		874D20AE1417D81000262A4E /* awl_sfml_test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = awl_sfml_test.1; sourceTree = "<group>"; };
@@ -3535,12 +3539,13 @@
 		87A9A91E141E54B10000BBA3 /* Awl */ = {
 			isa = PBXGroup;
 			children = (
-				87A9A91F141E54B10000BBA3 /* Async.hpp */,
 				87A9A920141E54B10000BBA3 /* Awl.hpp */,
+				87A9A91F141E54B10000BBA3 /* Async.hpp */,
 				87A9A921141E54B10000BBA3 /* boost */,
 				87A9B015141E54B20000BBA3 /* Condition.hpp */,
 				87A9B016141E54B20000BBA3 /* Config.hpp */,
 				87A9B017141E54B20000BBA3 /* Debug.hpp */,
+				87496A2A1423DC6B00D6E613 /* Err.hpp */,
 				87A9B018141E54B20000BBA3 /* Lock.hpp */,
 				87A9B019141E54B20000BBA3 /* MainThread.hpp */,
 				87A9B01A141E54B20000BBA3 /* Mutex.hpp */,
@@ -6049,6 +6054,7 @@
 				87A9B701141E58F30000BBA3 /* Async.cpp */,
 				87A9B702141E58F30000BBA3 /* Condition.cpp */,
 				87A9B703141E58F30000BBA3 /* Debug.cpp */,
+				87496A271423DC5C00D6E613 /* Err.cpp */,
 				87A9B704141E58F30000BBA3 /* Lock.cpp */,
 				87A9B705141E58F30000BBA3 /* MainThread.cpp */,
 				87A9B706141E58F30000BBA3 /* Mutex.cpp */,
@@ -7814,6 +7820,7 @@
 				87A9B746141E5E600000BBA3 /* MutexImpl.hpp in Headers */,
 				87A9B748141E5E600000BBA3 /* Platform.hpp in Headers */,
 				87A9B74A141E5E600000BBA3 /* ThreadImpl.hpp in Headers */,
+				87496A2B1423DC6B00D6E613 /* Err.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7946,6 +7953,7 @@
 				87A9B745141E5E600000BBA3 /* MutexImpl.cpp in Sources */,
 				87A9B747141E5E600000BBA3 /* Platform.cpp in Sources */,
 				87A9B749141E5E600000BBA3 /* ThreadImpl.cpp in Sources */,
+				87496A281423DC5C00D6E613 /* Err.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
