@@ -34,7 +34,7 @@
 #include <Awl/Mutex.hpp>	// Use Awl mutexes
 #include <iostream>
 
-namespace aw {
+namespace awl {
 	namespace priv {
 	class ConditionImpl {
 	public:
@@ -58,6 +58,6 @@ namespace aw {
 	};
 	
 	} // namespace
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_ConditionImpl_hpp

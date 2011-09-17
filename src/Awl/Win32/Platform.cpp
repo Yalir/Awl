@@ -31,7 +31,7 @@
 
 #include <Awl/Win32/Platform.hpp>
 
-namespace aw {
+namespace awl {
 	namespace priv {
 		
 		////////////////////////////////////////////////////////////
@@ -64,4 +64,4 @@ namespace aw {
 		
 	} // namespace priv
 	
-} // namespace aw
+} // namespace awl

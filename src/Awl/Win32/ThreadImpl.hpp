@@ -42,7 +42,7 @@
 #include <process.h>
 #include <Windows.h>
 
-namespace aw
+namespace awl
 {
 class Thread;
 
@@ -104,6 +104,6 @@ private :
 
 } // namespace priv
 
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_ThreadImpl_hpp

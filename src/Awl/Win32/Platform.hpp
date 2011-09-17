@@ -39,7 +39,7 @@
 #include <windows.h>
 #include <vector>
 
-namespace aw
+namespace awl
 {
 namespace priv
 {
@@ -70,6 +70,6 @@ public :
 	
 } // namespace priv
 
-} // namespace aw
+} // namespace awl
 
 #endif // Awl_PlatformWin32_hpp

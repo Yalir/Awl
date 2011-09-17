@@ -38,7 +38,7 @@
 #include <Awl/boost/noncopyable.hpp>
 #include <windows.h>
 
-namespace aw
+namespace awl
 {
 namespace priv
 {
@@ -83,7 +83,7 @@ private :
 
 } // namespace priv
 
-} // namespace aw
+} // namespace awl
 
 
 #endif // Awl_MutexImpl_hpp

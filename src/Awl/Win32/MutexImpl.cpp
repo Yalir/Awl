@@ -31,7 +31,7 @@
 
 #include <Awl/Win32/MutexImpl.hpp>
 
-namespace aw {
+namespace awl {
 	namespace priv {
 		
 		////////////////////////////////////////////////////////////
@@ -62,4 +62,4 @@ namespace aw {
 		}
 		
 	} // namespace priv
-} // namespace aw
+} // namespace awl

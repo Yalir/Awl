@@ -28,7 +28,7 @@
 
 #include <Awl/Win32/ConditionImpl.hpp>
 
-namespace aw {
+namespace awl {
 	namespace priv {
 		
 		ConditionImpl::ConditionImpl(int var) :
@@ -122,5 +122,5 @@ namespace aw {
 		}
 		
 	} // namespace priv
-} // namespace aw
+} // namespace awl
 

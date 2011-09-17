@@ -33,7 +33,7 @@
 #include <iostream>
 #include <Awl/Err.hpp>
 
-namespace aw {
+namespace awl {
 	namespace priv {
 		
 		unsigned int ThreadImpl::CurrentThreadId(void)
@@ -94,4 +94,4 @@ namespace aw {
 		}
 		
 	} // namespace priv
-} // namespace aw
+} // namespace awl
