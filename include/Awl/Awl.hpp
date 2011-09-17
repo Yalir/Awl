@@ -49,7 +49,6 @@
 #include <Awl/Async.hpp>
 #include <Awl/MainThread.hpp>
 #include <Awl/Task.hpp>
-#include <Awl/Async.hpp>
 #include <Awl/WorkLoop.hpp>
 
 #endif
