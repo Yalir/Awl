@@ -43,10 +43,18 @@
 
 namespace awl
 {
+	namespace {
+		unsigned int g_mainThreadId = 0;
+	}
 	
 	unsigned int Thread::GetCurrentThreadId(void)
 	{
 		return priv::ThreadImpl::CurrentThreadId();
+	}
+	
+	unsigned int Thread::GetMainThreadId(void)
+	{
+		return g_mainThreadId;
 	}
 	
 	////////////////////////////////////////////////////////////
@@ -93,6 +101,12 @@ namespace awl
 	void Thread::Run()
 	{
 		myFunction->Run();
+	}
+	
+	// Registered by the global thread pool at construction time
+	void Thread::RegisterMainThread(void)
+	{
+		g_mainThreadId = GetCurrentThreadId();
 	}
 	
 } // namespace awl

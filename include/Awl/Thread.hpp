@@ -54,12 +54,18 @@ namespace priv
 ////////////////////////////////////////////////////////////
 class Awl_Api Thread : boost::noncopyable
 {
+	friend class ThreadPool;
 public :
 
 	/** @brief Returns the OS-specific thread identifier
 	 * @return The OS-specific thread identifier
 	 */
 	static unsigned int GetCurrentThreadId(void);
+	
+	/** @brief Returns the OS-specific main thread identifier
+	 * @return The OS-specific main thread identifier
+	 */
+	static unsigned int GetMainThreadId(void);
 	
     ////////////////////////////////////////////////////////////
     /// \brief Construct the thread from a functor with no argument
@@ -194,6 +200,8 @@ private :
     ///
     ////////////////////////////////////////////////////////////
     void Run();
+	
+	static void RegisterMainThread(void);
 
     ////////////////////////////////////////////////////////////
     // Member data
