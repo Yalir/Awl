@@ -108,9 +108,19 @@ namespace awl {
 		 * your work as quickly as possible.
 		 * If a Task is cancelled before its start, it's not executed.
 		 *
-		 * @return A boolean indicating whether the Task is cancelled
+		 * @return A boolean value indicating whether the Task is cancelled
 		 */
 		bool IsCancelled(void) const;
+		
+		/** @brief Returns whether a Task has been completed.
+		 *
+		 * @details A Task is marked as completed as soon as it exits
+		 * its bound block/function/method, even if the Task has been canceled
+		 * during execution.
+		 *
+		 * @return A boolean value indicating whether the Task has finished running
+		 */
+		bool IsOver(void) const;
 		
 		/** @brief Wait until the task is over
 		 *
@@ -131,6 +141,7 @@ namespace awl {
 		
 		Callback m_callback;
 		bool m_isCancelled;
+		bool m_isOver;
 		WorkerThread *m_owner;
 		Uint64 m_threadId;
 		Condition m_taskDone;

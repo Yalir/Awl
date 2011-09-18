@@ -36,6 +36,7 @@ namespace awl {
 	Task::Task(void) :
 	m_callback(),
 	m_isCancelled(false),
+	m_isOver(false),
 	m_owner(NULL),
 	m_threadId(-1),
 	m_taskDone()
@@ -46,6 +47,7 @@ namespace awl {
 	Task::Task(Callback f) :
 	m_callback(f),
 	m_isCancelled(false),
+	m_isOver(false),
 	m_owner(NULL),
 	m_threadId(-1),
 	m_taskDone()
@@ -78,6 +80,11 @@ namespace awl {
 		return m_isCancelled;
 	}
 	
+	bool Task::IsOver(void) const
+	{
+		return m_isOver;
+	}
+	
 	bool Task::Wait(void)
 	{
 		if (m_threadId == Thread::GetCurrentThreadId())
@@ -104,7 +111,10 @@ namespace awl {
 		m_threadId = Thread::GetCurrentThreadId();
 		
 		if (!m_isCancelled)
-			m_callback();
+		{
+			m_callback(this);
+			m_isOver = true;
+		}
 		
 		m_taskDone = 1;
 	}
