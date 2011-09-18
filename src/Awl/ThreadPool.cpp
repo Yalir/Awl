@@ -66,8 +66,12 @@ namespace awl {
 		
 		if (it != m_threads.end())
 		{
-			(*it)->Die();
 			m_threads.insert(m_threads.end(), new WorkerThread());
+			(*it)->Die();
+		}
+		else
+		{
+			MT_DEBUG_COUT(std::cout << "Worker thread not found in list." << std::endl);
 		}
 	}
 	
