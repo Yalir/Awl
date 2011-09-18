@@ -47,6 +47,11 @@ namespace awl {
 		return shared;
 	}
 	
+	void ThreadPool::WaitAndDie(void)
+	{
+		Default().DoWaitAndDie();
+	}
+	
 	void ThreadPool::ScheduleTaskForExecution(TaskRef t)
 	{
 		m_hasPendingTask.Lock();
@@ -79,6 +84,22 @@ namespace awl {
 		
 		return res;
 	}
+	
+	void ThreadPool::DoWaitAndDie()
+	{
+		m_hasPendingTask.WaitAndLock(0, Condition::AutoUnlock);
+		m_hasPendingTask.Invalidate();
+		
+		// Clean threads' set
+		std::set<WorkerThread *>::iterator it = m_threads.begin();
+		while (it != m_threads.end())
+		{
+			WorkerThread *w = *it;
+			delete w;
+			m_threads.erase(it);
+			it++;
+		}
+	}
 
 	
 	ThreadPool::ThreadPool(int, int, int)
@@ -106,17 +127,7 @@ namespace awl {
 	
 	ThreadPool::~ThreadPool()
 	{
-		m_hasPendingTask.WaitAndLock(0, Condition::AutoUnlock);
-		m_hasPendingTask.Invalidate();
-		
-		// Clean threads' set
-		std::set<WorkerThread *>::iterator it = m_threads.begin();
-		while (it != m_threads.end())
-		{
-			WorkerThread *w = *it;
-			delete w;
-			it++;
-		}
+		DoWaitAndDie();
 	}
 	
 	bool ThreadPool::HasPendingTask_unprotected(void)

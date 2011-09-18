@@ -54,6 +54,11 @@ namespace awl {
 		 */
 		static ThreadPool& Default();
 		
+		/** @brief Waits for all the tasks to complete
+		 * and releases the worker threads
+		 */
+		static void WaitAndDie(void);
+		
 		/** Registers a Task to be executed by one of the thread pool's threads
 		 *
 		 * @param t The Task to register
@@ -70,6 +75,7 @@ namespace awl {
 		
 		bool HasPendingTask_unprotected(void);
 		bool WaitForTask(TaskRef& t);
+		void DoWaitAndDie(void);
 		
 		std::queue<TaskRef> m_pendingTasks;
 		Condition m_hasPendingTask;
