@@ -33,10 +33,12 @@
 #include <Awl/boost/noncopyable.hpp>
 
 namespace awl {
+	class Task;
 	
-	/** Defines a simple callback to a function defined as follow : void f(void)
+	/** Defines a simple callback to a function defined as follow : void f(Task* self)
+	 * where @a self is the parent Task
 	 */
-	typedef boost::function <void (void)> Callback;
+	typedef boost::function <void (Task*)> Callback;
 
 } // namespace awl
 

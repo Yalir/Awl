@@ -39,46 +39,60 @@
  */
 
 /** @brief Call the given @a function on the main thread
+ * @details You're given access to the parent Task object through the @a self pointer
  *
  * @param function The function or static method to call
  * @return The Task object associated to that call
  */
-#define AwlMainThreadCall(function) awl::MainThreadCall(boost::bind(function))
+#define AwlMainThreadCall(function) awl::MainThreadCall(boost::bind(function, _1))
 
 /** @brief Call the given @a method on the main thread
+ * @details You're given access to the parent Task object through the @a self pointer
  *
  * @param method The (non-static) method to call
  * @param object The object targetted by the @a method
  * @return The Task object associated to that call
  */
-#define AwlMainThreadMethod(method, object) awl::MainThreadCall(boost::bind(method, object))
+#define AwlMainThreadMethod(method, object) awl::MainThreadCall(boost::bind(method, object, _1))
 
-/** @brief Start a block that is to be executed on the main thread.
- * You have to close the block with AwlCloseMainThreadBlock
+/** @brief Creates a block that is to be executed asynchronously on the main thread.
+ * @details After the end of this block, the inner code is not guaranted to have been
+ * performed yet. You're given access to the parent Task object through the @a self pointer
+ *
+ * @code
+ * AwlAsyncMainThreadBlock
+ * ({
+ *		while (!self->IsCancelled())
+ *		{
+ *			your code to execute on the main thread here
+ *		}
+ * })
+ * // previous code may still not be executed but we don't need it to go on
+ * @endcode
+ */
+#define AwlAsyncMainThreadBlock(functionBlock) \
+{ struct __awl_local_struct { static void __awl_async_block(awl::Task *self) { functionBlock \
+} }; AwlMainThreadCall(__awl_local_struct::__awl_async_block); } 
+
+/** @brief Creates a block that is to be executed on the main thread.
+ * @details After the end of this block, the inner code is guaranted to have been
+ * performed. As this block is synchronized with the main thread and waits for
+ * its completion, it should be the shortest and fastest possible to avoid
+ * important lock time.
  *
  * @code
  * AwlMainThreadBlock
- * {
- *    your code to execute on the main thread here
- * }
- * AwlCloseMainThreadBlock;
+ * ({
+ *		while (!self->IsCancelled())
+ *		{
+ *			your code to execute on the main thread here
+ *		}
+ * })
  * @endcode
  */
-#define AwlMainThreadBlock { struct __awl_local_struct { static void __awl_main_thread_block(void)
-
-/** @brief Close a block that should be executed on the main thread, without
- * waiting for its completion
- *
- * @see AwlMainThreadBlock
- */
-#define AwlCloseAsyncMainThreadBlock }; awl::MainThreadCall(boost::bind(__awl_local_struct::__awl_main_thread_block)); }
-
-/** @brief Close a block that should be executed on the main thread,
- * and wait for its completion
- *
- * @see AwlMainThreadBlock
- */
-#define AwlCloseMainThreadBlock }; awl::TaskRef __awl_task = awl::MainThreadCall(boost::bind(__awl_local_struct::__awl_main_thread_block)); __awl_task->Wait(); }
+#define AwlMainThreadBlock(functionBlock) \
+{ struct __awl_local_struct { static void __awl_async_block(awl::Task *self) { functionBlock \
+} }; awl::TaskRef __awl_task = AwlMainThreadCall(__awl_local_struct::__awl_async_block); __awl_task->Wait(); } 
 
 namespace awl {
 	

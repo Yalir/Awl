@@ -40,39 +40,64 @@
  */
 
 /** @brief Call the given @a function in an asynchronous way
+ * @details You're given access to the parent Task object through the @a self pointer
  *
  * @param function The function or static method to call
+ * with the following signature: void function(awl::Task *self)
  * @return The Task object associated to that call
  */
-#define AwlAsyncCall(function) awl::AsyncCall(boost::bind(function))
+#define AwlAsyncCall(function) awl::AsyncCall(boost::bind(function, _1))
 
 /** @brief Call the given @a method in an asynchronous way
+ * @details You're given access to the parent Task object through the @a self pointer
  *
  * @param method The (non-static) method to call
+ * with the following signature: void class::method(awl::Task *self)
  * @param object The object targetted by the @a method
  * @return The Task object associated to that call
  */
-#define AwlAsyncMethod(method, object) awl::AsyncCall(boost::bind(method, object))
+#define AwlAsyncMethod(method, object) awl::AsyncCall(boost::bind(method, object, _1))
 
 /** @brief Start a block that is to be executed in an asynchronous way.
- * You have to close the block with AwlCloseAsyncBlock
  *
+ * @details You're given access to the parent Task object through the @a self pointer
  * @code
  * AwlAsyncBlock
- * {
- *    your parallelized code here
- * }
- * AwlCloseAsyncBlock;
+ * ({
+ *		while (!self->IsCancelled())
+ *		{
+ *			your parallelized code here
+ *		}
+ * })
  * @endcode
  */
-#define AwlAsyncBlock { struct __awl_local_struct { static void __awl_async_block(void)
+#define AwlAsyncBlock(functionBlock) \
+{ struct __awl_local_struct { static void __awl_async_block(awl::Task *self) { functionBlock \
+} }; AwlAsyncCall(__awl_local_struct::__awl_async_block); } 
 
-/** @brief See AwlAsyncBlock
- * @see AwlAsyncBlock
+/** @brief Start a block that is to be executed in an asynchronous way, and gives
+ * back a Task object to externally control the Task.
+ *
+ * @details You're given access to the parent Task object through the @a self pointer
+ *
+ * @code
+ * TaskRef myTask;
+ * AwlAsyncManagedBlock
+ * (myTask,
+ * {
+ *		while (!self->IsCancelled())
+ *		{
+ *			your parallelized code here
+ *		}
+ * })
+ *
+ * if (shoudl_cancel)
+ *     myTask->Cancel();
+ * @endcode
  */
-#define AwlCloseAsyncBlock }; awl::AsyncCall(boost::bind(__awl_local_struct::__awl_async_block)); }
-
-#define AwlCloseAsyncControlledBlock(taskRef) }; taskRef = awl::AsyncCall(boost::bind(__awl_local_struct::__awl_async_block)); }
+#define AwlAsyncManagedBlock(taskRef, functionBlock)\
+{ struct __awl_local_struct { static void __awl_async_block(awl::Task *self) { functionBlock \
+} }; taskRef = AwlAsyncCall(__awl_local_struct::__awl_async_block); }
 
 namespace awl {
 	
@@ -80,6 +105,7 @@ namespace awl {
 	 * and get a handle on this task
 	 *
 	 * @param f the function or method that represents the task
+	 * with the following signature: void function(awl::Task *self)
 	 * @return The associated Task object
 	 */
 	TaskRef Awl_Api AsyncCall(Callback f);
