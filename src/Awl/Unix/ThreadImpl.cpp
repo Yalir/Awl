@@ -65,7 +65,11 @@ void ThreadImpl::Wait()
 void ThreadImpl::Terminate()
 {
     if (myIsActive)
+	{
         pthread_cancel(myThread);
+		// Enter in a cancellation point to allow immediate thread death
+		pthread_testcancel();
+	}
 }
 
 
