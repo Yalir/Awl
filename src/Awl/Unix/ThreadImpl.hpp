@@ -51,7 +51,7 @@ class ThreadImpl : boost::noncopyable
 {
 public :
 
-	static unsigned int CurrentThreadId(void);
+	static Uint64 CurrentThreadId(void);
 	
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor, launch the thread

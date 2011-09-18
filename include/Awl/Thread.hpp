@@ -60,12 +60,12 @@ public :
 	/** @brief Returns the OS-specific thread identifier
 	 * @return The OS-specific thread identifier
 	 */
-	static unsigned int GetCurrentThreadId(void);
+	static Uint64 GetCurrentThreadId(void);
 	
 	/** @brief Returns the OS-specific main thread identifier
 	 * @return The OS-specific main thread identifier
 	 */
-	static unsigned int GetMainThreadId(void);
+	static Uint64 GetMainThreadId(void);
 	
     ////////////////////////////////////////////////////////////
     /// \brief Construct the thread from a functor with no argument

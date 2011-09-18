@@ -44,15 +44,15 @@
 namespace awl
 {
 	namespace {
-		unsigned int g_mainThreadId = 0;
+		Uint64 g_mainThreadId = 0;
 	}
 	
-	unsigned int Thread::GetCurrentThreadId(void)
+	Uint64 Thread::GetCurrentThreadId(void)
 	{
 		return priv::ThreadImpl::CurrentThreadId();
 	}
 	
-	unsigned int Thread::GetMainThreadId(void)
+	Uint64 Thread::GetMainThreadId(void)
 	{
 		return g_mainThreadId;
 	}

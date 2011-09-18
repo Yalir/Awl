@@ -34,9 +34,9 @@
 namespace awl {
 	namespace priv {
 
-unsigned int ThreadImpl::CurrentThreadId(void)
+Uint64 ThreadImpl::CurrentThreadId(void)
 {
-	return (unsigned int)pthread_self();
+	return (Uint64)pthread_self();
 }
 	
 ////////////////////////////////////////////////////////////
