@@ -54,10 +54,10 @@ Awl_Api std::ostream& Err();
 
 
 ////////////////////////////////////////////////////////////
-/// \fn sf::Err
+/// \fn awl::Err
 /// \ingroup system
 ///
-/// By default, sf::Err() outputs to the same location as std::cerr,
+/// By default, awl::Err() outputs to the same location as std::cerr,
 /// (-> the stderr descriptor) which is the console if there's
 /// one available.
 ///
@@ -65,7 +65,7 @@ Awl_Api std::ostream& Err();
 /// insertion operations defined by the STL
 /// (operator <<, manipulators, etc.).
 ///
-/// sf::Err() can be redirected to write to another output, independantly
+/// awl::Err() can be redirected to write to another output, independantly
 /// of std::cerr, by using the rdbuf() function provided by the
 /// std::ostream class.
 ///
@@ -73,13 +73,13 @@ Awl_Api std::ostream& Err();
 /// \code
 /// // Redirect to a file
 /// std::ofstream file("sfml-log.txt");
-/// std::streambuf* previous = sf::Err().rdbuf(file.rdbuf());
+/// std::streambuf* previous = awl::Err().rdbuf(file.rdbuf());
 ///
 /// // Redirect to nothing
-/// sf::Err().rdbuf(NULL);
+/// awl::Err().rdbuf(NULL);
 ///
 /// // Restore the original output
-/// sf::Err().rdbuf(previous);
+/// awl::Err().rdbuf(previous);
 /// \endcode
 ///
 ////////////////////////////////////////////////////////////
