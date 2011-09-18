@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872625DA14268C4D00E5DA8C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 872625D914268C4D00E5DA8C /* main.cpp */; };
 		87496A281423DC5C00D6E613 /* Err.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87496A271423DC5C00D6E613 /* Err.cpp */; };
 		87496A2B1423DC6B00D6E613 /* Err.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87496A2A1423DC6B00D6E613 /* Err.hpp */; };
-		874D20AD1417D81000262A4E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 874D20AC1417D81000262A4E /* main.cpp */; };
 		87A9B046141E54B30000BBA3 /* Async.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9A91F141E54B10000BBA3 /* Async.hpp */; };
 		87A9B047141E54B30000BBA3 /* Awl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9A920141E54B10000BBA3 /* Awl.hpp */; };
 		87A9B048141E54B30000BBA3 /* assert.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9A922141E54B10000BBA3 /* assert.hpp */; };
@@ -1724,18 +1724,10 @@
 		87A9B748141E5E600000BBA3 /* Platform.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9B737141E5E5F0000BBA3 /* Platform.hpp */; };
 		87A9B749141E5E600000BBA3 /* ThreadImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87A9B738141E5E5F0000BBA3 /* ThreadImpl.cpp */; };
 		87A9B74A141E5E600000BBA3 /* ThreadImpl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9B739141E5E5F0000BBA3 /* ThreadImpl.hpp */; };
-		87BF7B5513F5AAAA00338730 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87BF7B5413F5AAAA00338730 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		874D20B21417D81900262A4E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 87BF7AE413F59E2500338730 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 87BF7AEC13F59E2500338730;
-			remoteInfo = Awl;
-		};
-		8796E065141167DD006FF458 /* PBXContainerItemProxy */ = {
+		872625DB14268C9100E5DA8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87BF7AE413F59E2500338730 /* Project object */;
 			proxyType = 1;
@@ -1745,16 +1737,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		874D20A71417D81000262A4E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		87BF7B4F13F5AAAA00338730 /* CopyFiles */ = {
+		872625CB14268C2500E5DA8C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -1766,11 +1749,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		872625CD14268C2500E5DA8C /* computing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = computing; sourceTree = BUILT_PRODUCTS_DIR; };
+		872625D914268C4D00E5DA8C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		872625DE14268F2700E5DA8C /* libAwl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libAwl.dylib; path = DerivedData/Awl/Build/Products/Debug/libAwl.dylib; sourceTree = "<group>"; };
 		87496A271423DC5C00D6E613 /* Err.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Err.cpp; sourceTree = "<group>"; };
 		87496A2A1423DC6B00D6E613 /* Err.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Err.hpp; sourceTree = "<group>"; };
-		874D20A91417D81000262A4E /* awl_sfml_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = awl_sfml_test; sourceTree = BUILT_PRODUCTS_DIR; };
-		874D20AC1417D81000262A4E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		874D20AE1417D81000262A4E /* awl_sfml_test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = awl_sfml_test.1; sourceTree = "<group>"; };
 		87A9A91F141E54B10000BBA3 /* Async.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Async.hpp; sourceTree = "<group>"; };
 		87A9A920141E54B10000BBA3 /* Awl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Awl.hpp; sourceTree = "<group>"; };
 		87A9A922141E54B10000BBA3 /* assert.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = assert.hpp; sourceTree = "<group>"; };
@@ -3488,14 +3471,11 @@
 		87A9B737141E5E5F0000BBA3 /* Platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Platform.hpp; sourceTree = "<group>"; };
 		87A9B738141E5E5F0000BBA3 /* ThreadImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadImpl.cpp; sourceTree = "<group>"; };
 		87A9B739141E5E5F0000BBA3 /* ThreadImpl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadImpl.hpp; sourceTree = "<group>"; };
-		87BF7AED13F59E2500338730 /* libAwl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAwl.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		87BF7B5113F5AAAA00338730 /* awl_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = awl_test; sourceTree = BUILT_PRODUCTS_DIR; };
-		87BF7B5413F5AAAA00338730 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		87BF7B5613F5AAAA00338730 /* awl_test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = awl_test.1; sourceTree = "<group>"; };
+		87BF7AED13F59E2500338730 /* libAwl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libAwl.dylib; path = /Users/ceylo/Development/Awl/build/Release/libAwl.dylib; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		874D20A61417D81000262A4E /* Frameworks */ = {
+		872625CA14268C2500E5DA8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3509,23 +3489,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87BF7B4E13F5AAAA00338730 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		874D20AB1417D81000262A4E /* awl_sfml_test */ = {
+		872625C314268BB900E5DA8C /* test */ = {
 			isa = PBXGroup;
 			children = (
-				874D20AC1417D81000262A4E /* main.cpp */,
-				874D20AE1417D81000262A4E /* awl_sfml_test.1 */,
+				872625D614268C4D00E5DA8C /* computing */,
 			);
-			path = awl_sfml_test;
+			name = test;
+			sourceTree = "<group>";
+		};
+		872625D614268C4D00E5DA8C /* computing */ = {
+			isa = PBXGroup;
+			children = (
+				872625D914268C4D00E5DA8C /* main.cpp */,
+			);
+			name = computing;
+			path = test/computing;
 			sourceTree = "<group>";
 		};
 		87A9A91D141E54B10000BBA3 /* include */ = {
@@ -6090,29 +6071,18 @@
 			children = (
 				87A9A91D141E54B10000BBA3 /* include */,
 				87A9B02E141E54B20000BBA3 /* src */,
-				87BF7B5313F5AAAA00338730 /* awl_test */,
-				874D20AB1417D81000262A4E /* awl_sfml_test */,
+				872625C314268BB900E5DA8C /* test */,
 				87BF7AEE13F59E2500338730 /* Products */,
+				872625DE14268F2700E5DA8C /* libAwl.dylib */,
 			);
 			sourceTree = "<group>";
 		};
 		87BF7AEE13F59E2500338730 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87BF7AED13F59E2500338730 /* libAwl.dylib */,
-				87BF7B5113F5AAAA00338730 /* awl_test */,
-				874D20A91417D81000262A4E /* awl_sfml_test */,
+				872625CD14268C2500E5DA8C /* computing */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		87BF7B5313F5AAAA00338730 /* awl_test */ = {
-			isa = PBXGroup;
-			children = (
-				87BF7B5413F5AAAA00338730 /* main.cpp */,
-				87BF7B5613F5AAAA00338730 /* awl_test.1 */,
-			);
-			path = awl_test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -7827,22 +7797,22 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		874D20A81417D81000262A4E /* awl_sfml_test */ = {
+		872625CC14268C2500E5DA8C /* computing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 874D20AF1417D81000262A4E /* Build configuration list for PBXNativeTarget "awl_sfml_test" */;
+			buildConfigurationList = 872625D314268C2500E5DA8C /* Build configuration list for PBXNativeTarget "computing" */;
 			buildPhases = (
-				874D20A51417D81000262A4E /* Sources */,
-				874D20A61417D81000262A4E /* Frameworks */,
-				874D20A71417D81000262A4E /* CopyFiles */,
+				872625C914268C2500E5DA8C /* Sources */,
+				872625CA14268C2500E5DA8C /* Frameworks */,
+				872625CB14268C2500E5DA8C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				874D20B31417D81900262A4E /* PBXTargetDependency */,
+				872625DC14268C9100E5DA8C /* PBXTargetDependency */,
 			);
-			name = awl_sfml_test;
-			productName = awl_sfml_test;
-			productReference = 874D20A91417D81000262A4E /* awl_sfml_test */;
+			name = computing;
+			productName = computing;
+			productReference = 872625CD14268C2500E5DA8C /* computing */;
 			productType = "com.apple.product-type.tool";
 		};
 		87BF7AEC13F59E2500338730 /* Awl */ = {
@@ -7862,24 +7832,6 @@
 			productName = Awl;
 			productReference = 87BF7AED13F59E2500338730 /* libAwl.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
-		};
-		87BF7B5013F5AAAA00338730 /* awl_test */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 87BF7B5713F5AAAA00338730 /* Build configuration list for PBXNativeTarget "awl_test" */;
-			buildPhases = (
-				87BF7B4D13F5AAAA00338730 /* Sources */,
-				87BF7B4E13F5AAAA00338730 /* Frameworks */,
-				87BF7B4F13F5AAAA00338730 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8796E066141167DD006FF458 /* PBXTargetDependency */,
-			);
-			name = awl_test;
-			productName = awl_test;
-			productReference = 87BF7B5113F5AAAA00338730 /* awl_test */;
-			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -7902,8 +7854,7 @@
 			projectRoot = "";
 			targets = (
 				87BF7AEC13F59E2500338730 /* Awl */,
-				87BF7B5013F5AAAA00338730 /* awl_test */,
-				874D20A81417D81000262A4E /* awl_sfml_test */,
+				872625CC14268C2500E5DA8C /* computing */,
 			);
 		};
 /* End PBXProject section */
@@ -7925,11 +7876,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		874D20A51417D81000262A4E /* Sources */ = {
+		872625C914268C2500E5DA8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				874D20AD1417D81000262A4E /* main.cpp in Sources */,
+				872625DA14268C4D00E5DA8C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7957,75 +7908,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87BF7B4D13F5AAAA00338730 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87BF7B5513F5AAAA00338730 /* main.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		874D20B31417D81900262A4E /* PBXTargetDependency */ = {
+		872625DC14268C9100E5DA8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 87BF7AEC13F59E2500338730 /* Awl */;
-			targetProxy = 874D20B21417D81900262A4E /* PBXContainerItemProxy */;
-		};
-		8796E066141167DD006FF458 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 87BF7AEC13F59E2500338730 /* Awl */;
-			targetProxy = 8796E065141167DD006FF458 /* PBXContainerItemProxy */;
+			targetProxy = 872625DB14268C9100E5DA8C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		874D20B01417D81000262A4E /* Debug */ = {
+		872625D414268C2500E5DA8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/DerivedData/Awl/Build/Products\"/**";
-				OTHER_LDFLAGS = (
-					"-framework",
-					"sfml-graphics",
-					"-framework",
-					"sfml-window",
-					"-framework",
-					"sfml-system",
-					"-lAwl",
-					"-framework",
-					OpenGL,
-				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "-lAwl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		874D20B11417D81000262A4E /* Release */ = {
+		872625D514268C2500E5DA8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/DerivedData/Awl/Build/Products\"/**";
-				OTHER_LDFLAGS = (
-					"-framework",
-					"sfml-graphics",
-					"-framework",
-					"sfml-window",
-					"-framework",
-					"sfml-system",
-					"-lAwl",
-					"-framework",
-					OpenGL,
-				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "-lAwl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -8037,13 +7959,12 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
@@ -8052,12 +7973,12 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
@@ -8091,47 +8012,16 @@
 			};
 			name = Release;
 		};
-		87BF7B5813F5AAAA00338730 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/DerivedData/Awl/Build/Products\"/**";
-				OTHER_LDFLAGS = "-lAwl";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		87BF7B5913F5AAAA00338730 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/DerivedData/Awl/Build/Products\"/**";
-				OTHER_LDFLAGS = "-lAwl";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		874D20AF1417D81000262A4E /* Build configuration list for PBXNativeTarget "awl_sfml_test" */ = {
+		872625D314268C2500E5DA8C /* Build configuration list for PBXNativeTarget "computing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				874D20B01417D81000262A4E /* Debug */,
-				874D20B11417D81000262A4E /* Release */,
+				872625D414268C2500E5DA8C /* Debug */,
+				872625D514268C2500E5DA8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		87BF7AE713F59E2500338730 /* Build configuration list for PBXProject "Awl" */ = {
 			isa = XCConfigurationList;
@@ -8147,15 +8037,6 @@
 			buildConfigurations = (
 				87BF7AFC13F59E2500338730 /* Debug */,
 				87BF7AFD13F59E2500338730 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		87BF7B5713F5AAAA00338730 /* Build configuration list for PBXNativeTarget "awl_test" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				87BF7B5813F5AAAA00338730 /* Debug */,
-				87BF7B5913F5AAAA00338730 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
