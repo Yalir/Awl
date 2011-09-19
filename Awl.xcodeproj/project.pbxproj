@@ -1724,6 +1724,7 @@
 		87A9B748141E5E600000BBA3 /* Platform.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9B737141E5E5F0000BBA3 /* Platform.hpp */; };
 		87A9B749141E5E600000BBA3 /* ThreadImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87A9B738141E5E5F0000BBA3 /* ThreadImpl.cpp */; };
 		87A9B74A141E5E600000BBA3 /* ThreadImpl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 87A9B739141E5E5F0000BBA3 /* ThreadImpl.hpp */; };
+		87B7B1F7142765AC00A500E0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87B7B1F6142765AC00A500E0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1734,10 +1735,26 @@
 			remoteGlobalIDString = 87BF7AEC13F59E2500338730;
 			remoteInfo = Awl;
 		};
+		87B7B1F81427661200A500E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87BF7AE413F59E2500338730 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87BF7AEC13F59E2500338730;
+			remoteInfo = Awl;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		872625CB14268C2500E5DA8C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		87B7B1E81427658A00A500E0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -3471,11 +3488,20 @@
 		87A9B737141E5E5F0000BBA3 /* Platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Platform.hpp; sourceTree = "<group>"; };
 		87A9B738141E5E5F0000BBA3 /* ThreadImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadImpl.cpp; sourceTree = "<group>"; };
 		87A9B739141E5E5F0000BBA3 /* ThreadImpl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadImpl.hpp; sourceTree = "<group>"; };
-		87BF7AED13F59E2500338730 /* libAwl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libAwl.dylib; path = /Users/ceylo/Development/Awl/build/Release/libAwl.dylib; sourceTree = "<absolute>"; };
+		87B7B1E51427656000A500E0 /* libAwl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAwl.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		87B7B1EA1427658A00A500E0 /* sfml_demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sfml_demo; sourceTree = BUILT_PRODUCTS_DIR; };
+		87B7B1F6142765AC00A500E0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		872625CA14268C2500E5DA8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87B7B1E71427658A00A500E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3496,6 +3522,7 @@
 			isa = PBXGroup;
 			children = (
 				872625D614268C4D00E5DA8C /* computing */,
+				87B7B1F4142765AC00A500E0 /* sfml_demo */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -6066,6 +6093,15 @@
 			path = Unix;
 			sourceTree = "<group>";
 		};
+		87B7B1F4142765AC00A500E0 /* sfml_demo */ = {
+			isa = PBXGroup;
+			children = (
+				87B7B1F6142765AC00A500E0 /* main.cpp */,
+			);
+			name = sfml_demo;
+			path = test/sfml_demo;
+			sourceTree = "<group>";
+		};
 		87BF7AE213F59E2500338730 = {
 			isa = PBXGroup;
 			children = (
@@ -6081,6 +6117,8 @@
 			isa = PBXGroup;
 			children = (
 				872625CD14268C2500E5DA8C /* computing */,
+				87B7B1E51427656000A500E0 /* libAwl.dylib */,
+				87B7B1EA1427658A00A500E0 /* sfml_demo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -7815,6 +7853,24 @@
 			productReference = 872625CD14268C2500E5DA8C /* computing */;
 			productType = "com.apple.product-type.tool";
 		};
+		87B7B1E91427658A00A500E0 /* sfml_demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87B7B1F21427658B00A500E0 /* Build configuration list for PBXNativeTarget "sfml_demo" */;
+			buildPhases = (
+				87B7B1E61427658A00A500E0 /* Sources */,
+				87B7B1E71427658A00A500E0 /* Frameworks */,
+				87B7B1E81427658A00A500E0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87B7B1F91427661200A500E0 /* PBXTargetDependency */,
+			);
+			name = sfml_demo;
+			productName = sfml_demo;
+			productReference = 87B7B1EA1427658A00A500E0 /* sfml_demo */;
+			productType = "com.apple.product-type.tool";
+		};
 		87BF7AEC13F59E2500338730 /* Awl */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87BF7AFB13F59E2500338730 /* Build configuration list for PBXNativeTarget "Awl" */;
@@ -7830,7 +7886,7 @@
 			);
 			name = Awl;
 			productName = Awl;
-			productReference = 87BF7AED13F59E2500338730 /* libAwl.dylib */;
+			productReference = 87B7B1E51427656000A500E0 /* libAwl.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -7855,6 +7911,7 @@
 			targets = (
 				87BF7AEC13F59E2500338730 /* Awl */,
 				872625CC14268C2500E5DA8C /* computing */,
+				87B7B1E91427658A00A500E0 /* sfml_demo */,
 			);
 		};
 /* End PBXProject section */
@@ -7881,6 +7938,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				872625DA14268C4D00E5DA8C /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87B7B1E61427658A00A500E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87B7B1F7142765AC00A500E0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7916,6 +7981,11 @@
 			target = 87BF7AEC13F59E2500338730 /* Awl */;
 			targetProxy = 872625DB14268C9100E5DA8C /* PBXContainerItemProxy */;
 		};
+		87B7B1F91427661200A500E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87BF7AEC13F59E2500338730 /* Awl */;
+			targetProxy = 87B7B1F81427661200A500E0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -7946,6 +8016,52 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "-lAwl";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		87B7B1F01427658B00A500E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lAwl",
+					"-lsfml-window",
+					"-lsfml-graphics",
+					"-lsfml-system",
+					"-framework",
+					OpenGL,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		87B7B1F11427658B00A500E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lAwl",
+					"-lsfml-window",
+					"-lsfml-graphics",
+					"-lsfml-system",
+					"-framework",
+					OpenGL,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -8020,6 +8136,15 @@
 			buildConfigurations = (
 				872625D414268C2500E5DA8C /* Debug */,
 				872625D514268C2500E5DA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87B7B1F21427658B00A500E0 /* Build configuration list for PBXNativeTarget "sfml_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87B7B1F01427658B00A500E0 /* Debug */,
+				87B7B1F11427658B00A500E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
