@@ -84,6 +84,14 @@ int main (int argc, const char * argv[])
 	AwlAsyncCall(TestClass::static_method);
 	AwlAsyncMethod(&TestClass::method, &obj);
 	
+	awl::TaskRef task;
+	AwlAsyncManagedBlock
+	(task,
+	{
+		MT_COUT(std::cout << "check point " << __LINE__ << " ok:" << ++counter << std::endl);
+	})
+	task->Wait();
+	
 	awl::ThreadPool::WaitAndDie();
 	awl::WorkLoop::Default().Run(); // call here to be sure function() has been executed
 	
