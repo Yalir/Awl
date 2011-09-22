@@ -95,13 +95,13 @@ namespace awl {
 		m_hasPendingTask.Invalidate();
 		
 		// Clean threads' set
-		std::set<WorkerThread *>::iterator it = m_threads.begin();
-		while (it != m_threads.end())
+		
+		while (!m_threads.empty())
 		{
+			std::set<WorkerThread *>::iterator it = m_threads.begin();
 			WorkerThread *w = *it;
 			delete w;
 			m_threads.erase(it);
-			it++;
 		}
 	}
 
