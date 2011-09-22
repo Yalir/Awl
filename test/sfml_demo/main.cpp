@@ -92,11 +92,11 @@ int main()
 		})
 	})
 	
+	// Here we run the WorkLoop to process the tasks we wanted to perform
+	// on the main thread
 	while (win.IsOpened() && awl::WorkLoop::Default().Run())
 	{
 		sf::Event ev;
-		// Here we run the WorkLoop to process the tasks we wanted to perform
-		// on the main thread
 		while (win.PollEvent(ev))
 		{
 			if (ev.Type == sf::Event::Closed)
