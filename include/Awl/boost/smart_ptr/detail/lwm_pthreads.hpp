@@ -17,7 +17,7 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 //
 
-#include <boost/assert.hpp>
+#include <Awl/boost/assert.hpp>
 #include <pthread.h>
 
 namespace boost

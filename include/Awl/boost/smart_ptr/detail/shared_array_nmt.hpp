@@ -14,10 +14,10 @@
 //  See http://www.boost.org/libs/smart_ptr/shared_array.htm for documentation.
 //
 
-#include <boost/assert.hpp>
-#include <boost/checked_delete.hpp>
-#include <boost/throw_exception.hpp>
-#include <boost/smart_ptr/detail/atomic_count.hpp>
+#include <Awl/boost/assert.hpp>
+#include <Awl/boost/checked_delete.hpp>
+#include <Awl/boost/throw_exception.hpp>
+#include <Awl/boost/smart_ptr/detail/atomic_count.hpp>
 
 #include <cstddef>          // for std::ptrdiff_t
 #include <algorithm>        // for std::swap

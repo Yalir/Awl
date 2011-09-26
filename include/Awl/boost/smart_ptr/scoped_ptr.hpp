@@ -11,9 +11,9 @@
 //  http://www.boost.org/libs/smart_ptr/scoped_ptr.htm
 //
 
-#include <boost/assert.hpp>
-#include <boost/checked_delete.hpp>
-#include <boost/detail/workaround.hpp>
+#include <Awl/boost/assert.hpp>
+#include <Awl/boost/checked_delete.hpp>
+#include <Awl/boost/detail/workaround.hpp>
 
 #ifndef BOOST_NO_AUTO_PTR
 # include <memory>          // for std::auto_ptr
@@ -104,7 +104,7 @@ public:
     }
 
 // implicit conversion to "bool"
-#include <boost/smart_ptr/detail/operator_bool.hpp>
+#include <Awl/boost/smart_ptr/detail/operator_bool.hpp>
 
     void swap(scoped_ptr & b) // never throws
     {

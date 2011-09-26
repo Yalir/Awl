@@ -18,8 +18,8 @@
 //  http://www.boost.org/LICENSE_1_0.txt)
 //
 
-#include <boost/detail/sp_typeinfo.hpp>
-#include <boost/smart_ptr/detail/spinlock_pool.hpp>
+#include <Awl/boost/detail/sp_typeinfo.hpp>
+#include <Awl/boost/smart_ptr/detail/spinlock_pool.hpp>
 
 namespace boost
 {

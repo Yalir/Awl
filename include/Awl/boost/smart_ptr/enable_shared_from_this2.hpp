@@ -12,10 +12,10 @@
 //  http://www.boost.org/LICENSE_1_0.txt
 //
 
-#include <boost/config.hpp>
-#include <boost/shared_ptr.hpp>
-#include <boost/assert.hpp>
-#include <boost/detail/workaround.hpp>
+#include <Awl/boost/config.hpp>
+#include <Awl/boost/shared_ptr.hpp>
+#include <Awl/boost/assert.hpp>
+#include <Awl/boost/detail/workaround.hpp>
 
 namespace boost
 {

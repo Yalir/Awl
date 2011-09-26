@@ -14,19 +14,19 @@
 //  See http://www.boost.org/libs/smart_ptr/shared_array.htm for documentation.
 //
 
-#include <boost/config.hpp>   // for broken compiler workarounds
+#include <Awl/boost/config.hpp>   // for broken compiler workarounds
 
 #if defined(BOOST_NO_MEMBER_TEMPLATES) && !defined(BOOST_MSVC6_MEMBER_TEMPLATES)
-#include <boost/smart_ptr/detail/shared_array_nmt.hpp>
+#include <Awl/boost/smart_ptr/detail/shared_array_nmt.hpp>
 #else
 
 #include <memory>             // TR1 cyclic inclusion fix
 
-#include <boost/assert.hpp>
-#include <boost/checked_delete.hpp>
+#include <Awl/boost/assert.hpp>
+#include <Awl/boost/checked_delete.hpp>
 
-#include <boost/smart_ptr/detail/shared_count.hpp>
-#include <boost/detail/workaround.hpp>
+#include <Awl/boost/smart_ptr/detail/shared_count.hpp>
+#include <Awl/boost/detail/workaround.hpp>
 
 #include <cstddef>            // for std::ptrdiff_t
 #include <algorithm>          // for std::swap
@@ -95,7 +95,7 @@ public:
     }
 
 // implicit conversion to "bool"
-#include <boost/smart_ptr/detail/operator_bool.hpp>
+#include <Awl/boost/smart_ptr/detail/operator_bool.hpp>
 
     bool unique() const // never throws
     {
