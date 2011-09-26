@@ -34,6 +34,8 @@
 #include <Awl/Condition.hpp>
 #include <Awl/boost/shared_ptr.hpp>
 #include <Awl/boost/noncopyable.hpp>
+#include <map>
+#include <string>
 
 namespace awl {
 	
@@ -135,6 +137,11 @@ namespace awl {
 		 */
 		bool Wait(void);
 		
+		/** @brief Define the input values to be used by the executed block
+		 */
+		void SetInput(std::map<std::string, void *>& inputValues);
+		
+		std::map<std::string, void *> input;
 	private:
 		void Execute(WorkerThread& owner);
 		void Execute(void); // from work loop

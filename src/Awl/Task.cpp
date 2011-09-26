@@ -99,6 +99,11 @@ namespace awl {
 		}
 	}
 	
+	void Task::SetInput(std::map<std::string, void *>& inputValues)
+	{
+		input = inputValues;
+	}
+	
 	void Task::Execute(WorkerThread& owner)
 	{
 		// Save the worker thread from which we're executing the task
